@@ -2,9 +2,9 @@ module.exports = {
 
     getInventory: (req, res) => {
         const db = req.app.get('db');
- 
         db.get_inventory()
         .then(product => res.status(200).send(product))
+        // console.log(product)
         .catch(err => res.status(500).send(err))
     },
  
@@ -20,7 +20,7 @@ module.exports = {
     createProduct: (req, res) => {
         const db = req.app.get('db');
         const {product_name, product_price, img} = req.body;
-         console.log(req.body)
+        //  console.log(req.body)
         db.create_product([product_name, product_price, img])
         .then(() => res.sendStatus(200))
         .catch(err => res.status(500).send(err))
@@ -36,6 +36,7 @@ module.exports = {
     },
  
     editProduct: (req, res) => {
+        console.log('edit product hits')
         const db = req.app.get('db')
         const {id} = req.params 
         const {product_name, product_price, img} = req.body

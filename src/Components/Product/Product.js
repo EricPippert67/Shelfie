@@ -21,7 +21,7 @@ class Product extends Component{
                 <p className='product-price'>${this.props.product.product_price}</p>
                 </div>
                 <div className='product-buttons'>
-                    <Link to='/edit'>
+                    <Link to={`/edit/${this.props.product.product_id}`}>
                     <button>Edit</button>
                     </Link>
                     

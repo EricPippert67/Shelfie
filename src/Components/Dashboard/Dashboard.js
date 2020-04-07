@@ -26,7 +26,7 @@ class Dashboard extends Component{
     delete(id) {
         axios.delete(`/api/inventory/${id}`)
         .then(response => {
-            this.setState({inventory: response.data})
+            this.componentDidMount();
             
         })
     }

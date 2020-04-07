@@ -89,7 +89,7 @@ class Form extends Component{
                     </div>
                     <div>
                         {this.props.match.params.id ? (
-                            <button onClick={() => this.editProduct()}>Save Changes</button>
+                            <button onClick={() => this.editProduct(this.props.match.params.id)}>Save Changes</button>
                         ):(
                         <div className='form-add-button'>
                         <Link to='/'>
